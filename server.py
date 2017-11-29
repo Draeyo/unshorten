@@ -3,7 +3,7 @@ from wtforms import Form, TextField, TextAreaField, validators, StringField, Sub
 import requests
 
 # App config
-DEBUG = True
+#DEBUG = True
 app = Flask(__name__)
 app.config.from_object(__name__)
 
@@ -36,11 +36,5 @@ def index():
             flash('All the forms are required.')
     return render_template('unshorten.html', form=form)
 
-#@app.route('/my-link/')
-#def my_link():
-#    print 'I got clicked !'
-
-#    return 'Click.'
-
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
